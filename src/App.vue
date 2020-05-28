@@ -1,18 +1,18 @@
 <template>
-  <div id="app" class="bg-green-darker">
-   <Todos3/>
+  <div id="app">
+   <Todos/>
   </div>
 </template>
 
 <script>
-import Todos3 from './components/Todos3.vue'
+import Todos from './components/Todos3.vue';
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
-    Todos3
+    Todos
   }
-}
+};
 </script>
 
 

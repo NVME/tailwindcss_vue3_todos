@@ -35,6 +35,8 @@ Stop your development server, if you tested it, and convert your project to a Vu
 
 $ vue add vue-next
 
+https://hoyci.unessa.net/2020/03/vue-typescript/
+$ vue add typescript    or  yarn add vue-cli-plugin-typescript -D --tilde  
 update vue version in package.json 
 
 $ yarn or npm install

@@ -56,10 +56,19 @@
 <script lang="ts">
 import { reactive, computed } from "vue";
 
+interface Todo {
+  id:number 
+  task:string
+  isCompleted: boolean
+}
 
+interface State {
+  list:Todo[]
+  input_task:string
+}
 export default {
   setup() {
-    let state = reactive({
+    let state:State = reactive({
       list: [
         {
           id: 1,
@@ -87,15 +96,16 @@ export default {
         return;
       }
       const new_id = list.length + 1;
-      list.push({
+      let new_todo:Todo= {
         id: new_id,
         task: input_task,
         isCompleted: false
-      });
+      };
+      list.push(new_todo);
       //total_count.value+=1;
       state.input_task = "";
     };
-    const updateTodo = (id)=> {
+    const updateTodo = (id:number)=> {
       const { list } = state;
       state.list = list.map(t =>
         t.id === id ? { ...t, isCompleted: !t.isCompleted } : t
