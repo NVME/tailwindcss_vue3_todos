@@ -68,7 +68,7 @@ interface State {
 }
 export default {
   setup() {
-    let state:State = reactive({
+    let state = reactive<State>({
       list: [
         {
           id: 1,
@@ -81,7 +81,8 @@ export default {
           isCompleted: false
         }
       ],
-      input_task: ""
+      input_task: ""     
+     
     });
 
     let total_count=computed(()=>state.list.length);
