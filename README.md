@@ -1,4 +1,4 @@
-# tailwind_todos
+# tailwindcss  todos vue 3
 
 ## Project setup
 ```
@@ -27,3 +27,16 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Add the Vue 3 CLI Plugin
+https://www.vuemastery.com/blog/vue-3-start-using-it-today/
+
+Stop your development server, if you tested it, and convert your project to a Vue 3 app by running:
+
+$ vue add vue-next
+
+update vue version in package.json 
+
+$ yarn or npm install
+
+
