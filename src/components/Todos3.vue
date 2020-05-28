@@ -53,8 +53,10 @@
   </div>
 </template>
 
-<script>
-import { reactive, ref } from "vue";
+<script lang="ts">
+import { reactive, computed } from "vue";
+
+
 export default {
   setup() {
     let state = reactive({
@@ -66,15 +68,15 @@ export default {
         },
         {
           id: 2,
-          task: "This is my second task, haven't finished",
+          task: "This is my second task, haven't finished!",
           isCompleted: false
         }
       ],
       input_task: ""
     });
 
-    let total_count=ref(state.list.length);
-    let completed_count=ref(state.list.filter(todo=>todo.isCompleted).length)
+    let total_count=computed(()=>state.list.length);
+    let completed_count=computed(()=>state.list.filter(todo=>todo.isCompleted).length)
 
     const addTodo = () => {
       console.log("dd");
@@ -90,7 +92,7 @@ export default {
         task: input_task,
         isCompleted: false
       });
-      total_count.value+=1;
+      //total_count.value+=1;
       state.input_task = "";
     };
     const updateTodo = (id)=> {
@@ -98,7 +100,7 @@ export default {
       state.list = list.map(t =>
         t.id === id ? { ...t, isCompleted: !t.isCompleted } : t
       );
-       completed_count.value=state.list.filter(todo=>todo.isCompleted).length;
+      // completed_count.value=state.list.filter(todo=>todo.isCompleted).length;
     };
 
     return {
